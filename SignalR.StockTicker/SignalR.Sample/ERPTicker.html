@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sage 100 Realtime Dashboard</title>
+    <link href="ERPTicker.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Sage 100 Realtime Dashboard</h1>
+
+    <h2>Today's Sales</h2>
+    <div id="erpTable">
+        <table border="1">
+            <thead>
+                <tr><th>Type</th><th>Total</th><th># Of</th><th>Last</th><th>Largest</th><th>Smallest</th><th>Average</th></tr>
+            </thead>
+            <tbody>
+                <tr class="loading"><td colspan="7">loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Live ERP Ticker</h2>
+    <div id="erpTicker">
+        <div class="inner">
+            <ul>
+                <li class="loading">loading...</li>
+            </ul>
+        </div>
+    </div>
+
+        <div style="position: relative; top: 30%; float: left;">
+            <input type="submit" id="askSage" value="AskSage" />
+        </div>
+        <input type="button" id="clear" value="Clear" /> 
+    
+    <div style="height: 19%; border-top: double black; background-color: lightgray">    
+    
+        <div style="float: left; height: 90%; top: 10%; position: relative;">
+            <textarea spellcheck="true" id="question" style="width: 625px; height: 80%"></textarea>
+        </div>
+
+    </div>
+
+    <div id="responses" style="width: 80%; float: left;"></div>
+
+
+
+
+    <script src="../bundles/jquery"></script>
+    <script src="../bundles/jquerycolor"></script>
+    <script src="../Scripts/jquery.signalR-1.1.1.js"></script>
+    <script src="../signalr/hubs"></script>
+    <script src="SignalR.ERPTicker.js"></script>
+</body>
+</html>
+
+
+<!--    <input type="button" id="close" value="Close Market" disabled="disabled" /> -->
+<!--    <input type="button" id="reset" value="Reset" /> -->
