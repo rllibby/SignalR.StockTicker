@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Microsoft.AspNet.SignalR.Hubs;
 
 namespace Microsoft.AspNet.SignalR.StockTicker
@@ -11,7 +10,11 @@ namespace Microsoft.AspNet.SignalR.StockTicker
     {
         private readonly StockTicker _stockTicker;
 
-        public StockTickerHub() : this(StockTicker.Instance) { }
+        public StockTickerHub() :
+            this(StockTicker.Instance)
+        {
+
+        }
 
         public StockTickerHub(StockTicker stockTicker)
         {
@@ -26,11 +29,6 @@ namespace Microsoft.AspNet.SignalR.StockTicker
         public string GetMarketState()
         {
             return _stockTicker.MarketState.ToString();
-        }
-
-        public void UpdateStockPrice(Stock stock)
-        {
-            _stockTicker.UpdateStockPrice(stock);
         }
 
         public void OpenMarket()

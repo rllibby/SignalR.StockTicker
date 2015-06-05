@@ -23,7 +23,7 @@ namespace Microsoft.AspNet.SignalR.StockTicker
         
         private string _erpResponderId;
 
-        private ERPTicker(IHubConnectionContext clients)
+        private ERPTicker(IHubConnectionContext<dynamic> clients)
         {
             Clients = clients;
             LoadDefaultKPIs();
@@ -37,7 +37,7 @@ namespace Microsoft.AspNet.SignalR.StockTicker
             }
         }
 
-        private IHubConnectionContext Clients
+        private IHubConnectionContext<dynamic> Clients
         {
             get;
             set;
